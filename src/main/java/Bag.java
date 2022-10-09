@@ -104,9 +104,10 @@ public abstract class Bag {
     public String popItem(){
         if(capacity != 0){
             String last;
-            last = contents.get(-1);
-            contents.remove(-1);
-            numberOfContents += 1;
+            int lastIndex = contents.size() - 1;
+            last = contents.get(lastIndex);
+            contents.remove(lastIndex);
+            numberOfContents -= 1;
             return last;
         }
         return null;
